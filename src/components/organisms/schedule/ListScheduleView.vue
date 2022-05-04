@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <div class="col-md-12 order-md-1">
+      <div class="py-5 text-center">
+        <h2>Schedule Aggregates</h2>
+        <p class="lead">Aggregation by timeline.</p>
+      </div>
+      <Calendar />
+    </div>
+
   </div>
 </template>
 
@@ -8,7 +16,7 @@ import { defineComponent } from "vue";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import Datepicker from "vue3-datepicker";
+import Calendar from "@/components/molecules/Calendar.vue";
 
 // import schedulsApi from "@/api/schedule";
 
@@ -18,10 +26,10 @@ export default defineComponent({
     return {};
   },
   methods: {
-    handle() {
-     },
+    handle() {},
   },
   components: {
+    Calendar,
   },
 });
 </script>

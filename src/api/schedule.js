@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { EH_BE_HOST } from '@/api/const'
+
 const headers = {}
 headers['Content-type'] = 'application/json'
 
@@ -9,10 +11,9 @@ export default {
         const headers = {}
         headers['Content-type'] = 'application/json'
         headers['x-session-token'] = token
-
         const config = {
             method: 'get',
-            url: 'http://localhost:9000/schedules/periods',
+            url: `${EH_BE_HOST}/schedules/periods`,
             headers,
         }
 
@@ -24,14 +25,29 @@ export default {
         const headers = {}
         headers['Content-type'] = 'application/json'
         headers['x-session-token'] = token
-        
+
         const config = {
             method: 'post',
-            url: 'http://localhost:9000/schedules',
+            url: `${EH_BE_HOST}/schedules`,
             headers,
             data: {
                 schedules: [data]
             }
+        }
+
+        return axios.request(config)
+            .then(res => res)
+            .catch(error => { throw error })
+    },
+    aggregate: (from, to, token) => {
+        const headers = {}
+        headers['Content-type'] = 'application/json'
+        headers['x-session-token'] = token
+
+        const config = {
+            method: 'get',
+            url: `${EH_BE_HOST}/schedules/aggregate?from=${from}&to=${to}`,
+            headers,
         }
 
         return axios.request(config)

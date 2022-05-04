@@ -11,7 +11,6 @@ const state = {
     familyName: null,
     roles: Array()
   },
-  periods: []
 }
 
 export default createStore({

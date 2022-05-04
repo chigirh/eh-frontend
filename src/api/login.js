@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { EH_BE_HOST } from '@/api/const'
+
 export default {
     login: (authInfo) => {
         const headers = {}
@@ -7,7 +9,7 @@ export default {
 
         const config = {
             method: 'post',
-            url: 'http://localhost:9000/login',
+            url: `${EH_BE_HOST}/login`,
             headers,
             data: {
                 'user_name': authInfo.userName,

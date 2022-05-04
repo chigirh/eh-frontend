@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { EH_BE_HOST } from '@/api/const'
+
 const headers = {}
 headers['Content-type'] = 'application/json'
 
@@ -12,7 +14,7 @@ export default {
 
         const config = {
             method: 'post',
-            url: 'http://localhost:9000/users',
+            url: `${EH_BE_HOST}/users`,
             headers,
             data: {
                 'user': data
