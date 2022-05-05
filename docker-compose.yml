@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  nginx:
+    build: ./containers/nginx
+    container_name: nginx
+    ports:
+      - '8080:80'
+    volumes:
+      - ./vue:/var/www/html
+      - ./containers/nginx/nginx.conf:/etc/nginx/nginx.conf
+  vue-app:
+    build: ./containers/vue
+    container_name: vue-app
+    volumes:
+      - ./vue:/app
+    tty: true
