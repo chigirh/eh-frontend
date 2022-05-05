@@ -14,8 +14,6 @@
 <script>
 import { defineComponent } from "vue";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import Calendar from "@/components/molecules/Calendar.vue";
 
 // import schedulsApi from "@/api/schedule";

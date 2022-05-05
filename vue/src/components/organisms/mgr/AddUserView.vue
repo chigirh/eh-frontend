@@ -123,8 +123,6 @@ import { defineComponent } from "vue";
 
 import usersApi from "@/api/users";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 export default defineComponent({
   name: "AddUserView",
   data() {
