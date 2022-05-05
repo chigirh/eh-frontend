@@ -1,1 +1,1 @@
-export const EH_BE_HOST = "http://34.232.178.248:9000"
+export const EH_BE_HOST = "http://3.229.143.0:9000"
