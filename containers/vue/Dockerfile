@@ -10,4 +10,4 @@ RUN apk update && \
     npm install -g @vue/cli-init
 
 # RUN npm run serve
-CMD ["npm","run","serve"]
+# CMD ["npm","run","serve"]
