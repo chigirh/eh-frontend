@@ -2,17 +2,19 @@
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <router-link class="navbar-brand" to="/">east house .inc</router-link>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'ADMIN')" to="/mgr/add-user">Add User</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'GENE')" to="/schedule/regist">Schedule regist</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'ADMIN' || value === 'CORP')" to="/schedule/list">Schedule</router-link>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'ADMIN')" to="/mgr/add-user">Add User</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'GENE')" to="/schedule/regist">Schedule regist</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" v-if="this.$store.state.auth.roles.some(value => value === 'ADMIN' || value === 'CORP')" to="/schedule/list">Schedule</router-link>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <router-view />
