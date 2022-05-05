@@ -11,6 +11,7 @@ const state = {
     familyName: null,
     roles: Array()
   },
+  periods: Array(),
 }
 
 export default createStore({
@@ -26,6 +27,7 @@ export default createStore({
         'auth.firstName',
         'auth.familyName',
         'auth.roles',
+        'periods'
       ],
       storage: window.sessionStorage,
     }

@@ -161,6 +161,7 @@ export default defineComponent({
           this.$store.state.auth.token
         )
         .then(() => {
+          alert("regiter Success!!")
           this.$router.push({ path: "/" });
         })
         .catch((err) => {

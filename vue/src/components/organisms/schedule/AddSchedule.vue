@@ -119,6 +119,7 @@ export default defineComponent({
           this.$store.state.auth.token
         )
         .then(() => {
+          alert("regiter Success!!")
           this.$router.push({ path: "/" });
         })
         .catch((err) => {
@@ -132,11 +133,12 @@ export default defineComponent({
     },
   },
   setup() {
-    schedulsApi
-      .getPeriods(store.state.auth.token)
-      .then((res) => {
-        store.state.periods = res.data.periods;
-      })
+    if (0 < store.state.periods.length) {
+      return;
+    }
+    store
+      .dispatch("periods", store.state.auth.token)
+      .then(() => {})
       .catch((err) => {
         if (err.response.status == 401) {
           alert(err.response.data.message);

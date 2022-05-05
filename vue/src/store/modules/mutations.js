@@ -1,7 +1,7 @@
 import * as types from './mutation-types'
 
 export default {
-  [types.LOGIN] (state, payload) {
+  [types.LOGIN](state, payload) {
     const data = payload.data
     state.auth.token = data.session_token
     state.auth.userName = data.user.user_name
@@ -9,7 +9,11 @@ export default {
     state.auth.familyName = data.user.family_name
     state.auth.roles = data.user.roles
   },
-  [types.LOGOUT] (state, payload) {
+  [types.PERIODS](state, payload) {
+    const data = payload.data
+    state.periods = data.periods
+  },
+  [types.LOGOUT](state, payload) {
     state.auth.token = payload.token
   },
 }
